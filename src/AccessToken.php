@@ -1,4 +1,5 @@
 <?php
+
 /**
  * linkedin-client
  * AccessToken.php
@@ -182,11 +183,11 @@ class AccessToken implements \JsonSerializable
     /**
      * Specify data format for json_encode()
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): mixed
     {
         return [
-          'token' => $this->getToken(),
-          'expiresAt' => $this->getExpiresAt(),
+            'token' => $this->getToken(),
+            'expiresAt' => $this->getExpiresAt(),
         ];
     }
 }
