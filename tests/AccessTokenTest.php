@@ -1,4 +1,5 @@
 <?php
+
 /**
  * linkedin-client
  * AccessTokenTest.php
@@ -58,7 +59,7 @@ class AccessTokenTest extends TestCase
      */
     public function testConstructorFromResponseArrayWithException($exceptionClass, $exceptionMessage, $response)
     {
-        $this->setExpectedException($exceptionClass, $exceptionMessage);
+        $this->expectException($exceptionClass, $exceptionMessage);
         AccessToken::fromResponseArray($response);
     }
 

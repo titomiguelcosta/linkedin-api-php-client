@@ -1,4 +1,5 @@
 <?php
+
 /**
  * linkedin-client
  * ClientTest.php
@@ -16,12 +17,14 @@
 
 namespace LinkedIn;
 
+use PHPUnit\Framework\TestCase;
+
 /**
  * Class ClientTest
  *
  * @package LinkedIn
  */
-class ClientTest extends \PHPUnit_Framework_TestCase
+class ClientTest extends TestCase
 {
 
     /**
@@ -32,7 +35,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
     /**
      * Setup test environment
      */
-    public function setUp()
+    public function setUp(): void
     {
         $this->client = new Client(
             getenv('LINKEDIN_CLIENT_ID'),
@@ -63,7 +66,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $client = new Client();
 
         if ($expectedException !== null) {
-            $this->setExpectedException(get_class($expectedException), $expectedException->getMessage());
+            $this->expectException(get_class($expectedException), $expectedException->getMessage());
         }
 
         $client->setAccessToken($token);
